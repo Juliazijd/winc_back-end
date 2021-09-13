@@ -9,12 +9,12 @@ potato = 3
 brussel_sprout = 7
 sum_one_each = broccoli + leek + potato + brussel_sprout
 avg_price = sum_one_each / 4
-num_potatoes = potato * 7
-num_broccolis = broccoli * 5
-num_leeks = leek * 2
-num_brussel_sprouts = brussel_sprout * 10
-sum_total = num_potatoes + num_broccolis + num_leeks + num_brussel_sprouts
+num_potatoes = 7
+num_broccolis = 5
+num_leeks = 2
+num_brussel_sprouts = 10
+sum_total = (num_potatoes * potato) + (num_broccolis * broccoli) + (num_leeks * leek) + (num_brussel_sprouts * brussel_sprout)
 discount_percentage = 30
-discounted_sum_total = sum_total * (100 - discount_percentage) / 100
+discounted_sum_total = sum_total * ((100 - discount_percentage) / 100)
 
-print(num_potatoes, num_broccolis, num_leeks, num_brussel_sprouts, sum_total, discounted_sum_total)
+print(discounted_sum_total)
