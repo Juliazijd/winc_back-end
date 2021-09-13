@@ -4,12 +4,16 @@ __human_name__ = 'comments'
 
 # Add your code after this line
 
-# Program to convert temperature from celsius to fahrenheit
+"""Program to convert temperature 
+from celsius to fahrenheit."""
 
-# change this value for a different result
-celsius = 28
+""" 2021 Julia Zijderveld, Amsterdam, The Netherlands 
+An assignment from Winc Academy. """
 
-# calculate fahrenheit
-fahrenheit = (celsius * 1.8) + 32
+# any random number can be entered to convert to fahrenheit
+celsius = 28    # change this value for a different result
+
+# formula to calculate celsius into fahrenheit
+fahrenheit = (celsius * 1.8) + 32   # calculates fahrenheit
 
 print(celsius, 'degree Celsius is equal to', fahrenheit, 'degree Fahrenheit')
