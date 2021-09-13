@@ -15,6 +15,6 @@ num_leeks = 2
 num_brussel_sprouts = 10
 sum_total = (num_potatoes * potato) + (num_broccolis * broccoli) + (num_leeks * leek) + (num_brussel_sprouts * brussel_sprout)
 discount_percentage = 30
-discounted_sum_total = sum_total * ((100 - discount_percentage) / 100)
+discounted_sum_total = sum_total * (100 - discount_percentage) / 100
 
 print(discounted_sum_total)
