@@ -14,9 +14,10 @@ report = f'{scorer1} scored in the {goal_0}nd minute\n{scorer2} scored in the {g
 
 # Part 2
 player = 'Frank Rijkaard'
-first_name = player[:5]
-last_name = player[6:]
+first_name = player[:player.find(' ')]
+last_name = player[player.find(' ') + 1:]
 last_name_len = len(last_name)
 name_short = f'{first_name[:1]}. {last_name}'
 chant = f'{first_name}! ' * 4 + f'{first_name}!'
 good_chant = chant[:-1] != ' '
+
