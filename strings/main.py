@@ -9,13 +9,8 @@ scorer1 = 'Ruud Gullit'
 scorer2 = 'Marco van Basten'
 goal_0 = 32
 goal_1 = 54
-scorers = scorer1 + ' ' + str(goal_0), scorer2 + ' ' +  str(goal_1)
-report = f'{scorer1} scored in the {goal_0}nd minute \n{scorer2} scored in the {goal_1}th minute'
-
-print (scorer1, scorer2)
-print(goal_0, goal_1)
-print(scorers)
-print(report)
+scorers = f'{scorer1} {goal_0}, {scorer2} {goal_1}'
+report = f'{scorer1} scored in the {goal_0}nd minute\n{scorer2} scored in the {goal_1}th minute'
 
 # Part 2
 player = 'Frank Rijkaard'
@@ -23,11 +18,5 @@ first_name = player[:5]
 last_name = player[6:]
 last_name_len = len(last_name)
 name_short = f'{first_name[:1]}. {last_name}'
-chant = f'{first_name}! ' * 5
-
-print(player)
-print(first_name)
-print(last_name)
-print(last_name_len)
-print(name_short)
-print(chant)
+chant = f'{first_name}! ' * 4 + f'{first_name}!'
+good_chant = chant[:-1] != ' '
