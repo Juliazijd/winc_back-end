@@ -1,4 +1,3 @@
-from typing import Counter
 from helpers import random_koala_fact
 
 __winc_id__ = 'c0dc6e00dfac46aab88296601c32669f'
