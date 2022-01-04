@@ -99,5 +99,5 @@ if __name__ == "__main__":
         julia,
         "Netherlands",
         {'Belgium': ['Netherlands']},
-        {'Netherlands': ['North Korea']}
+        {'Netherlands': ['North-Korea']}
         )
