@@ -3,44 +3,46 @@ __human_name__ = 'files'
 
 import os
 from zipfile import ZipFile
-import shutil
 
 
 def clean_cache():
-    file_path = os.path.join(os.getcwd(), 'files/cache')
+    file_path = os.path.join(os.getcwd(), 'cache')
     if (os.path.exists(file_path)):
-        shutil.rmtree('files/cache', ignore_errors=True)
-        os.mkdir('files/cache')
+        file_list = os.listdir(file_path)
+        for file in file_list:
+            old_file = os.path.join(os.getcwd(), f'cache/{file}')
+            os.remove(old_file)
     else:
-        os.mkdir('files/cache')
+        os.mkdir(file_path)
     return file_path
 
 
-def cache_zip(zippath, dirpath):
-    with ZipFile(zippath, 'r') as zip:
-        zip.extractall(dirpath)
-        return dirpath
+def cache_zip(zip_path, dir_path):
+    with ZipFile(zip_path, 'r') as zip:
+        zip.extractall(dir_path)
+    return os.listdir(dir_path)
 
 
 def cached_files():
-    fileList = os.listdir(cache_zip(
-        '/Users/JULIA/Winc/back-end/files/data.zip',
-        clean_cache()))
-    pathList = []
-    for file in fileList:
-        pathList.append(os.path.abspath(f'files/cache/{file}'))
-    return pathList
+    file_list = cache_zip(os.path.join(os.getcwd(), 'data.zip'), clean_cache())
+    abs_path_list = []
+    for file in file_list:
+        file_path = os.path.join('cache/', file)
+        abs_path = os.path.abspath(file_path)
+        abs_path_list.append(abs_path)
+    return abs_path_list
 
 
 def find_password(list):
-    for file in list:
-        with open(file, 'r') as file:
+    for path in list:
+        with open(path, 'r') as file:
             if 'password' in file.read():
-                passwordFile = open(file.name)
-                lines = passwordFile.readlines()
+                password_file = open(file.name)
+                lines = password_file.readlines()
                 for line in lines:
                     if 'password' in line:
-                        password = line.replace('password: ', '')
+                        password = line.replace('password:', '')
+                        password = password.strip()
                         return password
 
 
