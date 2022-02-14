@@ -1,6 +1,4 @@
 # Do not modify these lines
-import os
-
 __winc_id__ = "534d85ea1ab14924a91f9eccf6f3f30d"
 __human_name__ = "errors"
 
@@ -40,9 +38,9 @@ def read_file(filename):
 
 
 # Returns item at `index` from list `l` if possible, otherwise returns None
-def get_item_from_list(l, index):
+def get_item_from_list(list, index):
     try:
-        return l[index]
+        return list[index]
     except IndexError:
         return None
 
