@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+{% with messages = get_flashed_messages() %}  
+    <!-- {% if messages %}   -->
+      {% for message in messages %}  
+           <p>{{ message }}</p>  
+      {% endfor %}  
+    <!-- {% endif %}   -->
+{% endwith %}
+
+<h1>Welcome to your personal dashboard: {{ session['username'] }}!</h1>
+<button action="/logout" method="GET">
+  <a href="/logout">logout</a>
+</button>
+  {% if session['username'] == "Alice" %}
+  <img src="https://d1e4pidl3fu268.cloudfront.net/29c1ed4e-06d5-495f-982d-b6e1ff15d122/alice800x600.png" />
+  {% elif session['username'] == "Bob" %}
+  <img src="https://i.pinimg.com/736x/0c/c1/29/0cc1297a46bb105bdd1e399cebb0904f--bob-marley-reggae.jpg" />
+  {% endif %}
+{% endblock content %}
+

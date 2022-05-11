@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Your error message logic and HTML here. -->
+
+<form action='/login' method="POST">
+    {% if error %}  
+    <p><strong>Error</strong>: {{error}}</p>  
+    {% endif %}
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username" value="{{
+        request.form.username }}">
+    <label for="username">Password</label>
+    <input id="password" type="text" name="password" value="{{
+        request.form.password }}">
+    <input type="submit" value="Login">
+</form>
+{% endblock content %}
+
